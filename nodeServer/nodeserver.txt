@@ -1,0 +1,3 @@
+cd nodeserver
+npm init
+npm i socket.io

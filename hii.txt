@@ -1,9 +1,10 @@
-width: 60%;
-    border: 2px solid black;
-    border-radius: 6px;
-    height: 34px;
-    float: right;
-    margin-left: -354px;
-    display: inline-block;
-    box-sizing: border-box;
-    margin-right: -186px;
+
+
+
+
+1. we are going to make realtime chat application with th help of web socket
+2.web sockets solves a very big problem solves the problem of http response.
+in http protocol me kabhi server client ko  response nahi bhez sakta { possible only http long polling}
+{how website work}
+3.actually server initiated a request always client have to make a request and server send response regards requests
+4.like htttp/https we have ws and wss

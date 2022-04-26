@@ -6,11 +6,11 @@ const io = require('socket.io')(10000, {
     }
 });
 
-
+// index.js
 // node server which will handle Socket.io connection
 
-// const io = require('socket.io')(5000)
-
+// //const io = require('socket.io')(5000)
+// usres which is connected
 const users = {};
 
 io.on('connection', socket => {
@@ -21,15 +21,16 @@ io.on('connection', socket => {
         socket.broadcast.emit('user-joined', name);
 
     });
-    // if someone sends a message broadcast it to okkkther people
 
+    // if someone sends a message broadcast it to other people
     socket.on('send', message => {
         socket.broadcast.emit('receive', { message: message, name: users[socket.id] })
     });
-    //     // if someone leaves the chat let others know
-        socket.on('disconnect', message => {
-            socket.broadcast.emit('left',users[socket.id])
-            delete users[socket.id]
-        });
+    
+     // if someone leaves the chat let others know
+    socket.on('disconnect', message => {
+        socket.broadcast.emit('left', users[socket.id])
+        delete users[socket.id]
+    });
 
 })
